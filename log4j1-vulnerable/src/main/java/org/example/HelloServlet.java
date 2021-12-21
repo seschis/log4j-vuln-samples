@@ -1,7 +1,8 @@
 package org.example;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 @WebServlet("/world")
 public class HelloServlet extends HttpServlet {
 
-  private static Logger logger = Logger.getRootLogger();
+  private static Logger logger = LoggerFactory.getLogger(HelloServlet.class);
 
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
